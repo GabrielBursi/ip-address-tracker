@@ -1,9 +1,14 @@
+import { Flex } from "@chakra-ui/react"
+import { Header, InfoAddress, MapComponent } from "./components"
+
 function App() {
 
   return (
-    <div className="App">
-      teste deploy
-    </div>
+    <Flex w='100vw' h='100vh' direction='column' alignItems='center'>
+      <Header/>
+      <InfoAddress/>
+      <MapComponent/>
+    </Flex>
   )
 }
 
