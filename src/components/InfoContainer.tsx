@@ -26,13 +26,16 @@ export function InfoContainer() {
         <Box
             w='75%'
             height='15%'
-            mt='28vh'
             borderRadius={15}
             boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
             bg='#fff'
             zIndex={1}
-            position='fixed'
             padding={4}
+            position='absolute'
+            top='50%'
+            left='50%'
+            transform='translate(-50%, -140%)'
+            margin='auto'
         >
             <HStack w='100%' h='100%' justifyContent='space-between'>
                 {array.map(info => <InfoAddress key={info.info} info={info.info} nameInfo={info.nameInfo} />)}

@@ -4,7 +4,7 @@ import { Header, InfoContainer, MapComponent } from "./components"
 function App() {
 
   return (
-    <Flex w='100vw' h='100vh' direction='column' alignItems='center'>
+    <Flex w='100vw' h='100vh' direction='column' alignItems='center' position='relative'>
       <Header/>
       <InfoContainer/>
       <MapComponent/>
