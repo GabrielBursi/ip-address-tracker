@@ -31,6 +31,7 @@ export function Header() {
                     borderLeftRadius={15}
                     borderRightRadius={0}
                     boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
+                    fontWeight='500'
                 />
                 <Button 
                     h='100%' 

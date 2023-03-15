@@ -1,18 +1,19 @@
-import { Box } from "@chakra-ui/react";
+import { Divider, Text, VStack } from "@chakra-ui/react";
 
-export function InfoAddress() {
+export interface InfoAddressProps {
+    nameInfo: string,
+    info: string,
+}
+
+export function InfoAddress({ info, nameInfo }: InfoAddressProps) {
     return (
-        <Box 
-            w='75%' 
-            h='20%' 
-            mt='28vh' 
-            borderRadius={15} 
-            boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
-            bg='#fff'
-            zIndex={1}
-            position='fixed'
-        >
-            
-        </Box>
+        <>
+            <VStack spacing={1} p={2} alignItems='start' h='100%' w='30%'>
+                <Text fontWeight='500' color='hsl(0, 0%, 59%)' fontSize='1xl'>{nameInfo}</Text>
+                <Text fontWeight='700' color='hsl(0, 0%, 17%)' fontSize='3xl'>{info}</Text>
+            </VStack>
+            <Divider orientation='vertical' height='80px' className="divider-none"/>
+        </>
+
     );
 }

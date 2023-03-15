@@ -1,12 +1,12 @@
 import { Flex } from "@chakra-ui/react"
-import { Header, InfoAddress, MapComponent } from "./components"
+import { Header, InfoContainer, MapComponent } from "./components"
 
 function App() {
 
   return (
     <Flex w='100vw' h='100vh' direction='column' alignItems='center'>
       <Header/>
-      <InfoAddress/>
+      <InfoContainer/>
       <MapComponent/>
     </Flex>
   )
