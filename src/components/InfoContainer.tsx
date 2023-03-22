@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { InfoAddress, InfoAddressProps } from "./InfoAddress";
 
 export function InfoContainer() {
@@ -25,21 +25,21 @@ export function InfoContainer() {
     return (
         <Box
             w='75%'
-            height='15%'
+            height={['35%', '35%', '15%']}
             borderRadius={15}
             boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
             bg='#fff'
             zIndex={1}
             padding={4}
             position='absolute'
-            top='50%'
+            top={['72%','76%', '50%']}
             left='50%'
             transform='translate(-50%, -140%)'
             margin='auto'
         >
-            <HStack w='100%' h='100%' justifyContent='space-between'>
+            <Flex w='100%' h='100%' justifyContent='space-between' alignItems='center' direction={['column', 'column', 'row']}>
                 {array.map(info => <InfoAddress key={info.info} info={info.info} nameInfo={info.nameInfo} />)}
-            </HStack>
+            </Flex>
         </Box>
     );
 }

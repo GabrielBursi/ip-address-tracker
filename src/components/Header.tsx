@@ -10,31 +10,29 @@ export function Header() {
             as="section"
             direction='column'
             align='center'
-            gap={10}
-            pt={50}
-            px={450}
+            gap={[5, 10, 10]}
+            pt={[10, 50, 50]}
+            px={[150, 250, 450]}
             color="#F7FAFC"
             bgImage="url('./src/assets/images/pattern-bg-desktop.png')"
             bgPosition="center"
             bgRepeat="no-repeat"
             bgSize='cover'
         >
-            <Heading size='3xl'>IP Address Tracker</Heading>
-            <HStack w='80%' spacing={0}>
+            <Heading size={['2xl','3xl','4xl']} isTruncated>IP Address Tracker</Heading>
+            <HStack w={['90vw','90vw','80%']} spacing={0} >
                 <Input 
-                    size='lg' 
+                    size={['sm', 'lg', 'lg']}
                     variant='filled' 
                     type='text' 
                     placeholder="Procure por qualquer endereço de IP ou domínio" 
                     fontSize='1.5rem' 
-                    p={8} 
-                    borderLeftRadius={15}
-                    borderRightRadius={0}
+                    p={[6, 8, 8]} 
                     boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
                     fontWeight='500'
                 />
                 <Button 
-                    h='100%' 
+                    h={['93%', '100%', '100%']}
                     w='10%' 
                     borderRightRadius={15} 
                     borderLeftRadius={0}
@@ -42,6 +40,7 @@ export function Header() {
                     variant='solid'
                     size='lg'
                     bgColor='black'
+                    boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
                 >
                     <ChevronRightIcon fontSize='3.5rem'/>
                 </Button>
