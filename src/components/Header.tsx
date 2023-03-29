@@ -1,8 +1,15 @@
 import { Button, Flex, Heading, HStack, Input } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { useEffect } from "react";
+import { getIp } from "../services";
 
 
 export function Header() {
+
+    useEffect(() => {
+        getIp(`8.8.8.8`).then((data) => {console.log(data.data)}).catch(error => console.log(error))
+    }, []);
+    
     return (
         <Flex
             w='100%'
