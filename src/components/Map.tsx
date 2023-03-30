@@ -1,7 +1,12 @@
 import { Box } from "@chakra-ui/react";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 
-export function MapComponent() {
+interface MapProps {
+    latitude: string | undefined;
+    longitude: string | undefined;
+}
+
+export function MapComponent({ latitude, longitude }: MapProps) {
     return (
         <Box 
             flex={1} 
@@ -11,12 +16,12 @@ export function MapComponent() {
             top={0}
             left={0}
         > 
-            <MapContainer style={{ width: '100%', height: '100%' }} center={[52.505, -0.09]} zoom={13} scrollWheelZoom={false} >
+            <MapContainer style={{ width: '100%', height: '100%' }} center={[Number(latitude) || 37.42240, Number(longitude) || -122.08421]} zoom={13} scrollWheelZoom={false} >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[52.505, -0.09]}/>
+                <Marker position={[Number(latitude) || 37.42240, Number(longitude) || -122.08421]}/>
             </MapContainer>
         </Box>
     );

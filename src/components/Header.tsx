@@ -1,15 +1,12 @@
 import { Button, Flex, Heading, HStack, Input } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { useEffect } from "react";
-import { getIp } from "../services";
+interface HeaderProps {
+    ipValue: string,
+    setIpValue: (value: string) => void,
+    getIpData:  () => void
+}
 
-
-export function Header() {
-
-    useEffect(() => {
-        getIp(`8.8.8.8`).then((data) => {console.log(data.data)}).catch(error => console.log(error))
-    }, []);
-    
+export function Header({ ipValue, setIpValue, getIpData }: HeaderProps) {
     return (
         <Flex
             w='100%'
@@ -37,6 +34,8 @@ export function Header() {
                     p={[6, 8, 8]} 
                     boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
                     fontWeight='500'
+                    value={ipValue}
+                    onChange={(e) => setIpValue(e.target.value)}
                 />
                 <Button 
                     h={['93%', '100%', '100%']}
@@ -48,6 +47,7 @@ export function Header() {
                     size='lg'
                     bgColor='black'
                     boxShadow='5px 5px 5px 1px rgba(0, 0, 0, 0.2)'
+                    onClick={getIpData}
                 >
                     <ChevronRightIcon fontSize='3.5rem'/>
                 </Button>

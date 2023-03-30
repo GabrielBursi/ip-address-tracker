@@ -1,8 +1,9 @@
 import { env } from './../../env';
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { ApiData } from '../types';
 
 export const Api = axios.create()
 
-export function getIp(ipAddress: string){
-    return Api.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${env.REACT_APP_API_KEY}&ip=${ipAddress}&lang=br`)
+export function getIp(ipAddress: string): Promise<AxiosResponse<ApiData, any>>{
+    return Api.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${env.REACT_APP_API_KEY}&ip=${ipAddress}`)
 }
