@@ -3,10 +3,11 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 interface HeaderProps {
     ipValue: string,
     setIpValue: (value: string) => void,
-    getIpData:  () => void
+    getIpData:  () => void,
+    isLoading: boolean
 }
 
-export function Header({ ipValue, setIpValue, getIpData }: HeaderProps) {
+export function Header({ ipValue, setIpValue, getIpData, isLoading }: HeaderProps) {
     return (
         <Flex
             w='100%'
@@ -26,6 +27,7 @@ export function Header({ ipValue, setIpValue, getIpData }: HeaderProps) {
             <Heading size={['2xl','3xl','4xl']} isTruncated>IP Address Tracker</Heading>
             <HStack w={['90vw','90vw','80%']} spacing={0} >
                 <Input 
+                    disabled={isLoading}
                     size={['sm', 'lg', 'lg']}
                     variant='filled' 
                     type='text' 
@@ -38,6 +40,7 @@ export function Header({ ipValue, setIpValue, getIpData }: HeaderProps) {
                     onChange={(e) => setIpValue(e.target.value)}
                 />
                 <Button 
+                    disabled={isLoading}
                     h={['93%', '100%', '100%']}
                     w='10%' 
                     borderRightRadius={15} 

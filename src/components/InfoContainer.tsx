@@ -1,13 +1,12 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { ApiData } from "../types";
 import { InfoAddress, InfoAddressProps } from "./InfoAddress";
 
 interface InfoContainerProps {
-    data: ApiData | undefined;
-    infos: InfoAddressProps[]
+    infos: InfoAddressProps[],
+    isLoading: boolean
 }
 
-export function InfoContainer({ data, infos }: InfoContainerProps) {
+export function InfoContainer({ infos, isLoading }: InfoContainerProps) {
 
     return (
         <Box
@@ -25,7 +24,7 @@ export function InfoContainer({ data, infos }: InfoContainerProps) {
             margin='auto'
         >
             <Flex w='100%' h='100%' justifyContent='space-between' alignItems='center' direction={['column', 'column', 'row']}>
-                {infos.map(info => <InfoAddress key={info.info} info={info.info} nameInfo={info.nameInfo} />)}
+                {infos.map(info => <InfoAddress key={info.info} info={info.info} nameInfo={info.nameInfo} isLoading={isLoading}/>)}
             </Flex>
         </Box>
     );
